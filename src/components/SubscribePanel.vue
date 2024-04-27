@@ -43,6 +43,13 @@ function sendEmail() {
     isPopupOpen.value = true
   }
 }
+
+function scrollToEvents() {
+  document.getElementById('all-events').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  })
+}
 </script>
 
 <template>
@@ -53,6 +60,10 @@ function sendEmail() {
       v-model="email"
       @click="subscribeEmail"
     />
+    <div class="other-events" @click="scrollToEvents">
+      <div class="text">Other Events<hr></div>
+      <img src="../img/arrow.svg" alt="arrow" />
+    </div>
   </div>
 
   <Teleport to="body">
@@ -73,6 +84,7 @@ function sendEmail() {
 
 <style scoped>
 .panel {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,6 +94,55 @@ function sendEmail() {
 
 #email-field {
   width: 440px;
+}
+
+.other-events {
+  position: absolute;
+  right: 110px;
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  cursor: pointer;
+}
+
+.other-events:hover img {
+  transform: rotate(270deg);
+}
+
+.other-events:hover .text > hr {
+  width: 100%;
+  border-color: #FFFFFF;
+}
+
+.other-events .text > hr {
+  width: 0;
+  border-color: transparent;
+
+  transition: width 500ms, border-color 500ms;
+}
+
+.other-events .text {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #FFFFFF;
+}
+
+.other-events img {
+  transform: rotate(90deg);
+
+  transition: transform 500ms;
 }
 
 

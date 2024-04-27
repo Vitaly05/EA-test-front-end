@@ -55,7 +55,7 @@ const events = [
 </script>
 
 <template>
-  <div class="full-page-container">
+  <div class="full-page-container" id="all-events">
     <div class="title-font">All events</div>
     <div class="accordion-panel">
       <Accordion :items="events" />
@@ -70,7 +70,7 @@ const events = [
   height: auto;
   min-height: 100dvh;
   overflow-x: hidden;
-  margin: 40px 0;
+  padding: 40px 0;
 
   display: flex;
   flex-direction: column;
