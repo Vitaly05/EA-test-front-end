@@ -79,9 +79,9 @@ onMounted(() => {
 <style scoped>
 .full-page-container {
   position: relative;
-  width: 100dvw;
+  width: 100vw;
   height: auto;
-  min-height: 100dvh;
+  min-height: 100vh;
   overflow-x: hidden;
   padding: 40px 0;
 

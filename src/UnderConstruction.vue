@@ -42,8 +42,8 @@ import SubscribePanel from './components/SubscribePanel.vue'
 <style scoped>
 .full-page-container {
   position: relative;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
 }
 
