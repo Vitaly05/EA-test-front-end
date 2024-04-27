@@ -16,6 +16,11 @@ const props = defineProps({
 const stringIndex = computed(() => {
   return props.index < 10 ? `0${props.index}` : props.index
 })
+
+const imageUrl = computed(() => {
+  const path = `/src/img/${props.imageName}`
+  return new URL(path, import.meta.url).href
+})
 </script>
 
 <template>
@@ -28,11 +33,11 @@ const stringIndex = computed(() => {
         {{ stringIndex }}
       </div>
 
-      <div class="background-image" :style="{ backgroundImage: `url('/src/img/${imageName}')`}"></div>
+      <div class="background-image" :style="{ backgroundImage: `url('${imageUrl}')` }"></div>
       <div class="background"></div>
       <div class="line"></div>
     </div>
-    <div class="main-panel" :style="{ backgroundImage: `url('/src/img/${imageName}')`}">
+    <div class="main-panel" :style="{ backgroundImage: `url('${imageUrl}')` }">
       <div class="background"></div>
       <div class="info">
         <div class="title">{{ title }}</div>
