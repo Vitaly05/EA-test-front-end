@@ -157,7 +157,7 @@ import SubscribePanel from './components/SubscribePanel.vue'
     right: -40px;
   }
 
-  .logo > img {
+  .logo img {
     width: 128px;
   }
 
