@@ -1,62 +1,75 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted } from 'vue';
 import Accordion from './components/Accordion.vue'
 
 const events = [
   {
     title: 'Hawaiian party',
     description: '13.02.2023',
-    imageSrc: 'Hawaiian party.jpg',
+    imageName: 'Hawaiian party.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Mafia party',
     description: '13.02.2023',
-    imageSrc: 'Mafia party.jpg',
+    imageName: 'Mafia party.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Party',
     description: '13.02.2023',
-    imageSrc: 'Party.jpg',
+    imageName: 'Party.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Party on the beach',
     description: '13.02.2023',
-    imageSrc: 'Party on the beach.jpg',
+    imageName: 'Party on the beach.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Home Security',
     description: '13.02.2023',
-    imageSrc: 'Party on the beach.jpg',
+    imageName: 'Party on the beach.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Network Design & Implementation',
     description: '13.02.2023',
-    imageSrc: 'Network Design & Implementation.jpg',
+    imageName: 'Network Design & Implementation.jpg',
     link: 'https://example.com'
   },
   {
     title: 'System Design & Engineering',
     description: '13.02.2023',
-    imageSrc: 'System Design & Engineering.jpg',
+    imageName: 'System Design & Engineering.jpg',
     link: 'https://example.com'
   },
   {
     title: 'Client Care Plans',
     description: '13.02.2023',
-    imageSrc: 'Client Care Plans.jpg',
+    imageName: 'Client Care Plans.jpg',
     link: 'https://example.com'
   }
 ]
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('slide-down')
+    }
+  })
+})
+
+onMounted(() => {
+  observer.observe(document.querySelector('#all-events > #title'))
+})
+
 </script>
 
 <template>
   <div class="full-page-container" id="all-events">
-    <div class="title-font">All events</div>
+    <div class="title-font" id="title">All events</div>
     <div class="accordion-panel">
       <Accordion :items="events" />
     </div>

@@ -8,7 +8,7 @@ const props = defineProps({
   index: { type: Number, required: true },
   title: { type: String, required: true },
   description: { type: String, required: false },
-  imageSrc: { type: String, required: true },
+  imageName: { type: String, required: true },
   link: { type: String, required: true },
   isActive: { type: Boolean, required: true }
 })
@@ -28,11 +28,12 @@ const stringIndex = computed(() => {
         {{ stringIndex }}
       </div>
 
-      <div class="background-image" :style="{ backgroundImage: `url('/src/img/${imageSrc}')`}"></div>
+      <div class="background-image" :style="{ backgroundImage: `url('/src/img/${imageName}')`}"></div>
       <div class="background"></div>
       <div class="line"></div>
     </div>
-    <div class="main-panel" :style="{ backgroundImage: `url('/src/img/${imageSrc}')`}">
+    <div class="main-panel" :style="{ backgroundImage: `url('/src/img/${imageName}')`}">
+      <div class="background"></div>
       <div class="info">
         <div class="title">{{ title }}</div>
         <div v-if="description" class="description">{{ description }}</div>

@@ -12,8 +12,7 @@
   text-align: center;
   text-transform: uppercase;
   
-  color: #162C4E;
-  opacity: 0.39;
+  color: rgba(22, 44, 78, 0.39);
 }
 
 .default-font {
@@ -41,6 +40,39 @@
   text-align: center;
 }
 
+.slide-down {
+  animation-name: fade-and-slide;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+  transform: translate(0, -40px);
+}
+
+.slide-ltr {
+  animation-name: fade-and-slide;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+  transform: translate(-200px, -100px);
+}
+
+.slide-rtl {
+  animation-name: fade-and-slide;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+
+  opacity: 0;
+  transform: translate(200px, -100px);
+}
+
+@keyframes fade-and-slide {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
 
 @media screen and (max-width: 1060px) {
   .title-font {

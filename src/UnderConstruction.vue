@@ -6,21 +6,23 @@ import SubscribePanel from './components/SubscribePanel.vue'
 
 <template>
   <div class="full-page-container">
-    <img src="./img/bg-right.png" id="bg-right-vector" />
-    <img src="./img/bg-left.png" id="bg-left-vector" />
+    <img src="./img/bg-left.png" id="bg-left-vector" class="slide-ltr" style="animation-delay: 500ms;" />
+    <img src="./img/bg-right.png" id="bg-right-vector" class="slide-rtl" style="animation-delay: 500ms;" />
 
-    <a class="logo" href="/">
-      <img src="./img/logo.png" alt="Lead Advisors" />
-    </a>
+    <div class="logo slide-down">
+      <a href="/">
+        <img src="./img/logo.png" alt="Lead Advisors" />
+      </a>
+    </div>
     <div class="content">
-      <div class="top-text">
+      <div class="top-text slide-down" style="animation-delay: 400ms;">
         <div class="title-font">Under Construction</div>
         <div class="default-font text-center">We're making lots of improvements and will be back soon</div>
       </div>
-      <div class="timer">
+      <div class="timer slide-down" style="animation-delay: 500ms;">
         <Timer />
       </div>
-      <div class="events">
+      <div class="events slide-down" style="animation-delay: 600ms;">
         <div class="default-font">Check our event page when you wait:</div>
         <a href="https://example.com" target="_blank">
           <Button>
@@ -51,7 +53,7 @@ import SubscribePanel from './components/SubscribePanel.vue'
   align-items: center;
   justify-content: center;
 }
-.logo > img {
+.logo img {
   width: 190px;
 }
 

@@ -9,11 +9,11 @@ const activeIndex = ref(1)
 let lastClickTime
 
 function setActiveIndex(index) {
+  const clickTime = new Date()
   if (!lastClickTime) {
-    lastClickTime = new Date()
+    lastClickTime = clickTime
     activeIndex.value = index
   } else {
-    const clickTime = new Date()
     if (clickTime - lastClickTime > 1000) {
       activeIndex.value = index
       lastClickTime = clickTime
@@ -29,7 +29,7 @@ function setActiveIndex(index) {
       :index="index + 1"
       :title="event.title"
       :description="event.description"
-      :image-src="event.imageSrc"
+      :image-name="event.imageName"
       :link="event.link"
       :is-active="index + 1 === activeIndex"
       @click="setActiveIndex"
