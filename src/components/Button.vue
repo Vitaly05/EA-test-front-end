@@ -38,6 +38,6 @@ defineEmits(['click'])
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px
+  gap: 28px;
 }
 </style>

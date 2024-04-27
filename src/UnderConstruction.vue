@@ -1,11 +1,11 @@
 <script setup>
 import Button from './components/Button.vue'
 import Timer from './components/Timer.vue'
-import SubscribePanel from './SubscribePanel.vue'
+import SubscribePanel from './components/SubscribePanel.vue'
 </script>
 
 <template>
-  <div class="container">
+  <div class="full-page-container">
     <img src="./img/bg-right.png" id="bg-right-vector" />
     <img src="./img/bg-left.png" id="bg-left-vector" />
 
@@ -17,7 +17,9 @@ import SubscribePanel from './SubscribePanel.vue'
         <div class="title-font">Under Construction</div>
         <div class="default-font text-center">We're making lots of improvements and will be back soon</div>
       </div>
-      <Timer style="margin-top: 40px;" />
+      <div class="timer">
+        <Timer />
+      </div>
       <div class="events">
         <div class="default-font">Check our event page when you wait:</div>
         <a href="https://example.com" target="_blank">
@@ -31,16 +33,16 @@ import SubscribePanel from './SubscribePanel.vue'
       </div>
     </div>
 
-    <SubscribePanel />
+    <SubscribePanel class="subscribe-panel" />
   </div>
 </template>
 
 <style scoped>
-.container {
+.full-page-container {
   position: relative;
   width: 100dvw;
   height: 100dvh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .logo {
@@ -54,6 +56,7 @@ import SubscribePanel from './SubscribePanel.vue'
 }
 
 .content {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,6 +78,10 @@ import SubscribePanel from './SubscribePanel.vue'
   max-width: 90%;
 }
 
+.timer {
+  margin-top: 40px;
+}
+
 .events {
   margin-top: 60px;
   display: flex;
@@ -86,6 +93,7 @@ import SubscribePanel from './SubscribePanel.vue'
 #bg-left-vector,
 #bg-right-vector {
   position: absolute;
+  z-index: -1;
 }
 
 #bg-left-vector {
@@ -114,6 +122,28 @@ import SubscribePanel from './SubscribePanel.vue'
   }
 }
 
+@media screen and (min-width: 1060px) and (max-height: 840px) {
+  .top-text div:nth-child(2) {
+    margin-top: 5px;
+  }
+  .timer {
+    margin-top: 10px;
+  }
+  .events {
+    margin-top: 10px;
+  }
+
+  #bg-left-vector {
+    width: 260px;
+    top: -20px;
+    left: -20px;
+  }
+  #bg-right-vector {
+    width: 220px;
+    right: -24px;
+  }
+}
+
 @media screen and (max-width: 530px) {
   #bg-left-vector {
     width: 200px;
@@ -132,5 +162,19 @@ import SubscribePanel from './SubscribePanel.vue'
   .top-text div:nth-child(2) {
     width: 286px;
   }
+
+  .timer {
+    margin-top: 20px;
+  }
+  .events {
+    margin-top: 20px;
+  }
+}
+</style>
+
+<style>
+.subscribe-panel {
+  width: 100%;
+  height: 15%;
 }
 </style>

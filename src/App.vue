@@ -1,7 +1,11 @@
 <script setup>
 import UnderConstruction from './UnderConstruction.vue'
+import AllEvents from './AllEvents.vue'
 </script>
 
 <template>
-  <UnderConstruction />
+  <div style="overflow-x: hidden;">
+    <UnderConstruction />
+    <AllEvents />
+  </div>
 </template>
