@@ -14,7 +14,7 @@ defineProps({
 
 <style scoped>
 .text {
-  background-image: url('../img/timer-number-bg.png');
+  background-image: url('../assets/timer-number-bg.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

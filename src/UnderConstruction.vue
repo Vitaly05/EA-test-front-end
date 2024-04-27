@@ -6,12 +6,12 @@ import SubscribePanel from './components/SubscribePanel.vue'
 
 <template>
   <div class="full-page-container">
-    <img src="./img/bg-left.png" id="bg-left-vector" class="slide-ltr" style="animation-delay: 500ms;" />
-    <img src="./img/bg-right.png" id="bg-right-vector" class="slide-rtl" style="animation-delay: 500ms;" />
+    <img src="./assets/bg-left.png" id="bg-left-vector" class="slide-ltr" style="animation-delay: 500ms;" />
+    <img src="./assets/bg-right.png" id="bg-right-vector" class="slide-rtl" style="animation-delay: 500ms;" />
 
     <div class="logo slide-down">
       <a href="/">
-        <img src="./img/logo.png" alt="Lead Advisors" />
+        <img src="./assets/logo.png" alt="Lead Advisors" />
       </a>
     </div>
     <div class="content">
@@ -28,7 +28,7 @@ import SubscribePanel from './components/SubscribePanel.vue'
           <Button>
             Go to the event
             <template #icon>
-              <img src="./img/arrow.svg" alt="arrow" />
+              <img src="./assets/arrow.svg" alt="arrow" />
             </template>
           </Button>
         </a>

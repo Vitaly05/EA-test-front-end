@@ -22,7 +22,7 @@ function close() {
   <div class="background" :class="animationClass" ref="bg"></div>
   <div class="popup" :class="animationClass">
     <div class="popup-close-icon" @click="close">
-      <img src="../img/close-icon.svg" alt="close" />
+      <img src="../assets/close-icon.svg" alt="close" />
     </div>
     <div class="popup-title">{{ title }}</div>
     <div class="popup-text">{{ text }}</div>

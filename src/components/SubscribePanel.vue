@@ -62,7 +62,7 @@ function scrollToEvents() {
     />
     <div class="other-events" @click="scrollToEvents">
       <div class="text">Other Events<hr></div>
-      <img src="../img/arrow.svg" alt="arrow" />
+      <img src="../assets/arrow.svg" alt="arrow" />
     </div>
   </div>
 

@@ -14,7 +14,7 @@ const value = defineModel()
       v-model="value"
     />
     <button @click="$emit('click')">
-      <img src="../img/arrow.svg" alt="arrow" />
+      <img src="../assets/arrow.svg" alt="arrow" />
     </button>
   </div>
 </template>

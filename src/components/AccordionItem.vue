@@ -18,7 +18,7 @@ const stringIndex = computed(() => {
 })
 
 const imageUrl = computed(() => {
-  const path = `/src/img/${props.imageName}`
+  const path = `../assets/${props.imageName}`
   return new URL(path, import.meta.url).href
 })
 </script>
