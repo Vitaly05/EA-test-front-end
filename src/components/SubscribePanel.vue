@@ -146,9 +146,27 @@ function scrollToEvents() {
 }
 
 
-@media screen and (max-width: 1060px) and (min-width: 530px) {
+@media screen and (max-width: 1060px) {
   #email-field {
     width: 360px;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .other-events {
+    position: relative;
+    right: auto;
+    padding: 0;
+  }
+
+  .other-events .text {
+    font-size: 16px;
   }
 }
 
